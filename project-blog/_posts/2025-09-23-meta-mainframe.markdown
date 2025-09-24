@@ -2,7 +2,7 @@
 layout: post
 title: "Meta Mainframe – Self Hosting a Jekyll Blog"
 date: 2025-09-23 15:40:11 -0700
-author: Maciej
+author: ⋆༺𓆩Maciej𓆪༻⋆
 categories: jekyll update
 ---
 

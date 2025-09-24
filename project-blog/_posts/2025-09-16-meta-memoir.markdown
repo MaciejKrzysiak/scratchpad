@@ -2,7 +2,7 @@
 layout: post
 title: "Meta Memoir - Getting Started with Jekyll"
 date: 2025-09-16 15:40:11 -0700
-author: Maciej
+author: ⋆༺𓆩Maciej𓆪༻⋆
 categories: jekyll update
 ---
 
@@ -39,7 +39,7 @@ Jekyll requires blog post files to be named according to the following format:
 
 Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit numbers, and `MARKUP` is the file extension representing the format used in the file.
 
-I'll host this blog in a scratchpad repo eventually and share that link here, happy hacking!
+I'll host this blog in a scratchpad repo eventually and share that link here, happy hacking ◝(ᵔᗜᵔ)◜
 
 [jekyll-docs]: https://jekyllrb.com/docs/home
 [jekyll-gh]: https://github.com/jekyll/jekyll
