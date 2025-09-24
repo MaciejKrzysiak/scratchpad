@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "Meta Memoir"
+title: "Meta Memoir - Getting Started with Jekyll"
 date: 2025-09-16 15:40:11 -0700
 author: Maciej
 categories: jekyll update
 ---
 
-> "If a tree falls in a forest and no one is around to hear it, does it make a sound?" - Tony Soprano
+> "If a 🌲 falls in a forest and no one is around to hear it, does it make a sound?" - Tony Soprano
 
 Scratchpad is on its 15th session and has seen some amazing projects. Unfortunately, unless we capture them in one place, they are lost to the wind. That's why I decided to create this blog. It will serve as a place for members to track their progress and share what they've learned with others. My hope is that, as the number of sessions and members grows, a long archive of projects will motivate us to keep hacking.
 
