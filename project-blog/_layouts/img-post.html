@@ -1,0 +1,117 @@
+---
+layout: default
+---
+
+<style>
+/* Scope everything to .img-post to avoid site-wide bleed */
+.img-post { --fg:#000000; --muted:#333333; --acc:#3a7bfd; color: var(--fg); }
+.img-post * { box-sizing: border-box; }
+
+/* Title/meta */
+.img-post .post-header { margin-bottom: 1rem; }
+.img-post .post-title { margin: 0 0 .25rem 0; line-height: 1.2; }
+.img-post .post-meta { opacity: .8; font-size: .95rem; }
+
+/* Tags + buttons */
+.img-post .tags { margin:.5rem 0 1rem; display:flex; gap:.4rem; flex-wrap:wrap; }
+.img-post .tag { font-size:.75rem; color:#aab; background:#0e1117; border:1px solid #222;
+  padding:.2rem .6rem; border-radius:999px; }
+
+/* Content area */
+.img-post .content img { max-width: 100%; height: auto; }
+
+/* Inline image rows */
+.img-post .img-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin: 1rem 0;
+}
+@media (min-width: 720px) {
+  .img-post .img-row { grid-template-columns: 1fr 1fr; }
+}
+.img-post .img-row figure { margin: 0; }
+.img-post .img-row img { width: 100%; height: auto; border-radius: 8px; display: block; }
+.img-post .img-row figcaption { font-size: 0.9rem; opacity: 0.8; margin-top: 0.35rem; }
+
+/* Compact gallery grid (auto thumbnails) via front matter `gallery:` */
+.img-post .gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 8px;
+  margin: 1rem 0;
+}
+@media (min-width: 960px) {
+  .img-post .gallery-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
+}
+.img-post .gallery-grid a { display:block; }
+.img-post .gallery-grid img { width: 100%; height: auto; border-radius: 8px; display: block; }
+
+.img-post .btn { display:inline-block; background:var(--acc); color:white;
+  padding:.6rem 1rem; border-radius:.6rem; text-decoration:none; }
+.img-post .downloads { display:flex; gap:.5rem; flex-wrap:wrap; margin: .75rem 0; }
+
+/* Meta list */
+.img-post .meta { margin-top: 1rem; }
+.img-post .meta ul { list-style:none; padding:0; margin:0; opacity:.85; }
+</style>
+
+<article class="post img-post">
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <p class="post-meta">
+      {% if page.date %}
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
+      {% endif %}
+      {% if page.author or site.author %}
+        &nbsp;&middot;&nbsp;<span class="post-author" itemprop="author">{{ page.author | default: site.author }}</span>
+      {% endif %}
+    </p>
+
+    {% if page.tags %}
+      <div class="tags">
+        {% for t in page.tags %}<span class="tag">{{ t }}</span>{% endfor %}
+      </div>
+    {% endif %}
+  </header>
+
+  {% if page.affiliate_url %}
+    <p><a class="btn" href="{{ page.affiliate_url }}" target="_blank" rel="nofollow sponsored">Buy / Learn More</a></p>
+  {% endif %}
+
+  {% if page.download_url %}
+    <p><a class="btn" href="{{ page.download_url }}" download>Download Files</a></p>
+  {% endif %}
+
+  {% if page.downloads %}
+    <div class="downloads">
+      {% for d in page.downloads %}
+        <p><a class="btn" href="{{ d.url | relative_url }}" download>{{ d.label }}</a></p>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {% if page.gallery %}
+    <h3>Gallery</h3>
+    <div class="gallery-grid">
+      {% for g in page.gallery %}
+        <a href="{{ g | relative_url }}" target="_blank" rel="noopener">
+          <img src="{{ g | relative_url }}" loading="lazy" alt="">
+        </a>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <div class="content">{{ content }}</div>
+
+  {% if page.printer or page.material or page.time_to_print or page.rating %}
+    <aside class="meta">
+      <ul>
+        {% if page.printer %}<li><strong>Printer:</strong> {{ page.printer }}</li>{% endif %}
+        {% if page.material %}<li><strong>Material:</strong> {{ page.material }}</li>{% endif %}
+        {% if page.time_to_print %}<li><strong>Print Time:</strong> {{ page.time_to_print }}</li>{% endif %}
+        {% if page.rating %}<li><strong>Rating:</strong> {{ page.rating }}/5</li>{% endif %}
+      </ul>
+    </aside>
+  {% endif %}
+</article>
