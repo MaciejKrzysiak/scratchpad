@@ -1,0 +1,31 @@
+version: "3.7"
+services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  hedgedoc:
+    image: quay.io/hedgedoc/hedgedoc:latest
+    environment:
+      CMD_DB_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}
+      CMD_DOMAIN: ${CMD_DOMAIN}
+      CMD_PROTOCOL_USESSL: ${CMD_PROTOCOL_USESSL}
+      CMD_URL_ADDPORT: ${CMD_URL_ADDPORT}
+      CMD_ALLOW_ANONYMOUS: "false"
+      CMD_ALLOW_FREEURLS: "false"
+      CMD_ALLOW_EMAIL_REGISTER: "false"
+      CMD_AUTHENTICATION: "github"
+      CMD_GITHUB_CLIENTID: ${CMD_GITHUB_CLIENTID}
+      CMD_GITHUB_CLIENTSECRET: ${CMD_GITHUB_CLIENTSECRET}
+    ports:
+      - "${PUBLIC_PORT:-6969}:3000"
+    volumes:
+      - /root/scratchpad/project-blog/_posts:/hedgedoc/_posts
+
+volumes:
+  db_data:
