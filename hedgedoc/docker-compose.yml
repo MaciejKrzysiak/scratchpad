@@ -23,7 +23,7 @@ services:
       CMD_GITHUB_CLIENTID: ${CMD_GITHUB_CLIENTID}
       CMD_GITHUB_CLIENTSECRET: ${CMD_GITHUB_CLIENTSECRET}
     ports:
-      - "${PUBLIC_PORT:-6969}:3000"
+      - "127.0.0.1:6969:3000"
     volumes:
       - /root/scratchpad/project-blog/_posts:/hedgedoc/_posts
 
