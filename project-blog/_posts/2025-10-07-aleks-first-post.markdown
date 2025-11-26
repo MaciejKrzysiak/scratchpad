@@ -103,7 +103,7 @@ _Aleks_
 
 ## Reference Gallery
 
-I went and tried this recipe and it turned out great! I swapped the protein for andouille sausage to add some more spice. Here are some sexy photos
+> "I went and tried this recipe and it turned out great! I swapped the protein for andouille sausage to add some more spice. Here are some sexy photos" - ༺𓆩Maciej𓆪༻
 
 <img src="/assets/images/Maciej_Autumnal_Pasta3.jpeg" alt="Cooking the Autumnal Pasta Sauce" width="400">
 
