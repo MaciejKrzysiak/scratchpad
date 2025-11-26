@@ -101,13 +101,13 @@ I recommend you try this pasta with turkey meatballs. I don't have a recipe for 
 
 ## Gallery
 
-![Autumnal Pasta Ingredients](/_images/Maciej_Autumnal_Pasta1.jpeg)
+![Autumnal Pasta Ingredients](/assets/images/Maciej_Autumnal_Pasta1.jpeg)
 _Fresh autumn vegetables ready for roasting_
 
-![Cooking the Autumnal Pasta Sauce](/_images/Maciej_Autumnal_Pasta2.jpeg)
+![Cooking the Autumnal Pasta Sauce](/assets/images/Maciej_Autumnal_Pasta2.jpeg)
 _The beautiful orange sauce comes together in the pan_
 
-![Finished Autumnal Pasta Dish](/_images/Maciej_Autumnal_Pasta3.jpeg)
+![Finished Autumnal Pasta Dish](/assets/images/Maciej_Autumnal_Pasta3.jpeg)
 _The final result - creamy autumnal pasta ready to enjoy!_
 
 _Aleks_
