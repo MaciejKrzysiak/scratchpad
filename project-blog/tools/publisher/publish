@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if [ $# -lt 1 ]; then
+  echo "Usage: sync-note NOTE_ID"
+  exit 1
+fi
+
+NOTE_ID="$1"
+
+curl -sS -X POST http://127.0.0.1:8090/sync-one \
+  -H "Content-Type: application/json" \
+  -d "{\"note_id\":\"${NOTE_ID}\"}" | jq .
