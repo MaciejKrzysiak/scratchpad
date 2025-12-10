@@ -1,4 +1,4 @@
-version: "3.7"
+
 services:
   db:
     image: postgres:15
@@ -26,6 +26,18 @@ services:
       - "127.0.0.1:6969:3000"
     volumes:
       - /root/scratchpad/project-blog/_posts:/hedgedoc/_posts
+
+  publisher:
+    build: ../project-blog/tools/publisher
+    environment:
+      HEDGEDOC_BASE: "http://hedgedoc:3000"
+      GIT_REPO_DIR: "/blog"
+    volumes:
+      - /root/scratchpad/project-blog:/blog
+    ports:
+      - "127.0.0.1:8090:8090"
+    depends_on:
+      - hedgedoc
 
 volumes:
   db_data:

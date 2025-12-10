@@ -24,7 +24,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   This blog is a place for Scratchpad members to immortalize their projects. 
   Writing makes it real.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://scratchpad.lol" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: idk
 github_username: idk
 
