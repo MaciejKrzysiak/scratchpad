@@ -14,13 +14,6 @@ Here's what she looks like!
 
 XXX PUT A PICTURE XXX
 
-<div class="img-row">
-  <figure>
-    <img src="/project-blog/_site/assets/_images/trellis.jpg" alt="Trellis">
-	<figcaption>Trellis</figcaption>
-  </figure>
-</div>
-
 My general mission with the printer has been to design from scratch some things I actually will use throughout my apartment.
 
 Phase 1: Can Opener
@@ -31,13 +24,10 @@ I drink a lot of water from cans and have a particular fondness for spicy, flavo
 	<figcaption>Trellis</figcaption>
 </figure>
 
-Phase 2: Lattice
+Phase 2: Trellis
 I've been amassing an army of plants and one poor, outdoor variant I received at my neices baptism, was really struggling. It could not support itself and was constantly following over and not getting any light. I made a simple spike and hexagon lattice to weave the plant through.
 
-<figure>
-    <img src="../_images/trellis.jpg" alt="Trellis">
-	<figcaption>Trellis</figcaption>
-</figure>
+<img src="/assets/images/trellis.jpeg" alt="A 3D printed trellis supporting my wee plant" width="400">
 
 Phase 3: Soap Stand
 I've been having fun with custom soaps (I bought some some at a Seattle street fair and then found a shop near my current place). These soaps need a stand so their glory is respected.
