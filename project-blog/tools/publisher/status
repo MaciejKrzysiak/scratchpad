@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if [ $# -lt 1 ]; then
+  echo "Usage: status NOTE_ID [USER_EMAIL]"
+  exit 1
+fi
+
+NOTE_ID="$1"
+USER_EMAIL="${2:-}"
+URL="http://127.0.0.1:8090/status/${NOTE_ID}"
+
+if [ -n "${USER_EMAIL}" ]; then
+  URL="${URL}?user_email=${USER_EMAIL}"
+fi
+
+curl -sS "${URL}" | jq .

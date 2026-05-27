@@ -10,7 +10,7 @@ services:
       - db_data:/var/lib/postgresql/data
 
   hedgedoc:
-    image: quay.io/hedgedoc/hedgedoc:latest
+    image: ${HEDGEDOC_IMAGE:-quay.io/hedgedoc/hedgedoc:latest}
     environment:
       CMD_DB_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}
       CMD_DOMAIN: ${CMD_DOMAIN}
@@ -26,6 +26,25 @@ services:
       - "${PUBLIC_PORT:-6969}:3000"
     volumes:
       - /root/scratchpad/project-blog/_posts:/hedgedoc/_posts
+
+  publisher:
+    build: ../project-blog/tools/publisher
+    environment:
+      HEDGEDOC_BASE: "http://hedgedoc:3000"
+      GIT_REPO_DIR: "/workspace"
+      BLOG_CONTENT_DIR: "/workspace/project-blog"
+      HEDGEDOC_MAP_FILE: "/workspace/project-blog/.hedgedoc-map.yml"
+      ALLOWED_EMAILS_FILE: "/etc/oauth2-proxy/emails.txt"
+      ADMIN_EMAILS_FILE: "/etc/oauth2-proxy/admins.txt"
+      PUBLIC_BLOG_BASE_URL: "https://scratchpad.lol"
+      PUBLISHER_ALLOWED_ORIGINS: "https://md.scratchpad.lol"
+    volumes:
+      - /root/scratchpad:/workspace
+      - /etc/oauth2-proxy:/etc/oauth2-proxy:ro
+    ports:
+      - "127.0.0.1:8090:8090"
+    depends_on:
+      - hedgedoc
 
 volumes:
   db_data:
